@@ -6,8 +6,8 @@ setup(
   description = 'Some additional utilities for idp dissemination data engineers to use',
   author = 'Michael Adams',
   author_email = 'michael.adams@ons.gov.uk',
-  url = 'https://github.com/ONS-OpenData/de-helpers',
-  download_url = 'https://github.com/ONS-OpenData/de-helpers/archive/0.1.tar.gz',
+  url = 'https://github.com/GSS-Cogs/de-helpers',
+  download_url = 'https://github.com/GSS-Cogs/de-helpers/archive/0.1.tar.gz',
   keywords = ['databaker', 'pandas', 'helpers'],
   classifiers = [],
 )

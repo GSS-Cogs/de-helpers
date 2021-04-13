@@ -18,7 +18,7 @@ from dehelpers.filters import foofilter
 
 We need to have them for everything, regardless of how trivial. Given that these are software functions that will run in many potential pipelines.
 
-BSS doenst really work lots of unconnected helper functions, so I've put in a basic unit test framework. You can run the tests via:
+BDD doenst really make sense with lots of small unconnected helper functions (if you function isn't small, it doesn't belong here), so I've put in a basic unit test setup. You can run the tests via:
 
 ```
 python -m unittest discover -v tests

@@ -4,7 +4,7 @@ A helper library of simple data transformation helpers, for use by the idp disse
 
 ## Installing
 
-`pip install --update --no-cache git+git://github.com/GSS-Cogs/de-helpers.git`
+`pip install --no-cache git+git://github.com/GSS-Cogs/de-helpers.git#egg=dehelpers`
 
 ## Usage
 

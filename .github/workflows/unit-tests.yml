@@ -25,4 +25,4 @@ jobs:
       - name: Logout some info
         run: ls -l
       - name: Run unit tests
-        run: pipenv run python -m unittest discover -v tests
+        run: pipenv run python3 -m unittest discover -v tests

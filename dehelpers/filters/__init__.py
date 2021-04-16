@@ -1,1 +1,1 @@
-from dehelpers.filters.examples import foofilter
+from dehelpers.filters.example import foofilter

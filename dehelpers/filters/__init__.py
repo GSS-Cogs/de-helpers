@@ -1,1 +1,1 @@
-from dehelpers.filter import example
+from dehelpers.filters import example

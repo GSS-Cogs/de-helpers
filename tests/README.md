@@ -86,7 +86,6 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-_Note - I've never ran unit tests via an action in the manner before (was just the quick and nasty way). Appears to work but will have to wait and see on that, will likely need some form of tweaks at some point._
 
 
 

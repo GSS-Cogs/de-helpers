@@ -23,3 +23,6 @@ BDD doesn't necessarily make sense with lots of small unconnected helper functio
 ```
 python -m unittest discover -v tests
 ```
+
+There's more information on using these here [https://github.com/GSS-Cogs/de-helpers/tree/master/tests/README.md](https://github.com/GSS-Cogs/de-helpers/tree/master/tests/README.md)
+

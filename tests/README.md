@@ -69,7 +69,7 @@ class TestCheeseFilter(unittest.TestCase):
         ]
 
         for mock_cell in mocked_cheese_cells:
-            self.assertEqual(foofilter(mock_cell), True)
+            self.assertEqual(cheesefilter(mock_cell), True)
 
     # Test that our filter returns False when expected to
     def test_cells_not_beginning_cheese_return_false(self):
@@ -80,7 +80,7 @@ class TestCheeseFilter(unittest.TestCase):
         ]
 
         for mock_cell in mocked_non_cheese_cells:
-            self.assertEqual(foofilter(mock_cell), False)
+            self.assertEqual(cheesefilter(mock_cell), False)
 
 if __name__ == '__main__':
     unittest.main()

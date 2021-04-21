@@ -40,7 +40,7 @@ This is enough that your new tests will get automatically discovered and ran eit
 
 ## What does a test_ file look like?
 
-There's an example here, but I'll break it down a bit too: (https://github.com/GSS-Cogs/de-helpers/blob/master/tests/filters/test_example.py)[https://github.com/GSS-Cogs/de-helpers/blob/master/tests/filters/test_example.py]
+There's an example here, but I'll break it down a bit too: [https://github.com/GSS-Cogs/de-helpers/blob/master/tests/filters/test_example.py](https://github.com/GSS-Cogs/de-helpers/blob/master/tests/filters/test_example.py)
 
 
 * So the `class` is pretty always going to be named after the thing being tested.

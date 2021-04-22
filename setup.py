@@ -1,6 +1,6 @@
 from distutils.core import setup
 setup(
-  name = 'de-helpers',
+  name = 'dehelpers',
   packages = ['dehelpers'],
   version = '0.0.1',
   description = 'Some additional utilities for idp dissemination data engineers to use',

@@ -13,7 +13,7 @@
 # ---
 
 def cdid_filter(xycell):
-    if str(xycell.value).isalnum() == True and str(xycell.value).isupper() == True and len(xycell.value) == 4:
-        return True
+    if type(xycell.value)==str and xycell.value.isalnum() == True and xycell.value.isupper() == True and len(xycell.value) == 4:
+            return True
     else:
         return False

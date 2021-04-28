@@ -19,7 +19,7 @@ from dehelpers.filters import foofilter
 All helpers are written to the python pep8 standard.
 
 Further information and conventions for writing helpers are accessible below:
-- [Writing Filters](https://github.com/GSS-Cogs/de-helpers/tree/master/dehelpes/filters/README.md)
+- [Writing Filters](https://github.com/GSS-Cogs/de-helpers/tree/master/dehelpers/filters/README.md)
 
 
 In the event conventions have not yet been provided, use a little common sense and aim for consistancy with the existing code base until documentation has caught up please.

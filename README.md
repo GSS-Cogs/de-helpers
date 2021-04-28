@@ -14,6 +14,16 @@ To use a custom filter for databaker, you can import them (to use the example) v
 from dehelpers.filters import foofilter 
 ```
 
+## Conventions & Standards
+
+All helpers are written to the python pep8 standard.
+
+Further information and conventions for writing helpers are accessible below:
+- [Writing Filters](https://github.com/GSS-Cogs/de-helpers/tree/master/dehelpers/filters/README.md)
+
+
+In the event conventions have not yet been provided, use a little common sense and aim for consistancy with the existing code base until documentation has caught up please.
+
 ## A note on tests
 
 We need to have them for everything, regardless of how trivial. Given that these are software functions that will run in many potential pipelines.

@@ -34,7 +34,7 @@ Use of prefix of `like_<filter>`. For example `like_CDID`, `like_ONSGeography`
 
 So a filter is just a function that _calls_ some behaviour when you pass it a variable (because function have a method named `__call__`).
 
-But - functions are not the only things that __call__ , so do lambda functons (for example `.filter(lambda x: "a" in x)` is a perfectly valid if slightly unreadable filter) and more importantly a _class_ can have a call method.
+But - functions are not the only things that can be __call__'ed , so can classes _if_ you give them a `__call__` method.
 
 ### But...why would you use a class fo make a filter?
 

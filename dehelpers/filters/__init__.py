@@ -1,4 +1,5 @@
-from dehelpers.filters.example import foofilter
-from dehelpers.filters.cdid import cdid_filter
+from dehelpers.filters.example import is_true
+from dehelpers.filters.cdid import like_cdid
+
 
 

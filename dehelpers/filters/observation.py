@@ -1,12 +1,12 @@
 from gssutils import *
-# from databaker.framework import *
+from databaker.framework import *
 import re
 regex = re.compile(r'([0-9]+)')
 
 def like_observations(tab):
     '''
-    Observation filter
-    This is the valid code for geting the observations
+    Observation function which outputs the observation data from a specified tab on a source data  
+    
     '''
 
     def observation_year(xycell): 

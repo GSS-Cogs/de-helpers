@@ -1,54 +1,41 @@
 import unittest
 
-from tests.helpers import MockXYCell
+from gssutils import *
+from databaker.framework import *
 from dehelpers.filters import like_observations
 
-class TestObservationFunction(unittest.TestCase):
+class TestObservationsFunction(unittest.TestCase):
     
     # Test that our filter returns what was expected
-    def test_like_observations_true(self): 
+    def test_like_observations_success(self):   
+        tabs = loadxlstabs("tests/OIC.xls") # load tabs  tests/OIC.xls
+        tab = tabs[2] # Table 1a
         
-        # Create some test data
-        mocked_observation_cells = [
-            MockXYCell(value=1997.0, x=1, y=1),
-            MockXYCell(value=1998.0, x=2, y=1),
-            MockXYCell(value=1999.0, x=3, y=1),
-            MockXYCell(value=2000.0, x=4, y=1),
-            MockXYCell(value=2001.0, x=5, y=1),
-            MockXYCell(value=390.0, x=1, y=3),
-            MockXYCell(value=2020.0, x=2, y=3),
-            MockXYCell(value=1997.0, x=3, y=3),
-            MockXYCell(value=1998.0, x=4, y=3),
-            MockXYCell(value=230.0, x=5, y=3),
-            MockXYCell(value=1.0, x=1, y=4),
-            MockXYCell(value=2317.0, x=2, y=4),
-            MockXYCell(value=13.0, x=3, y=4),
-            MockXYCell(value=5.0, x=4, y=4),
-            MockXYCell(value=1998.0, x=5, y=4),
-            MockXYCell(value=2020.0, x=5, y=5)
-        ]
+        actual_observation = like_observations(tab)
+        expected_observation = tab.excel_ref('C11').expand(DOWN).expand(RIGHT).is_not_blank()
+    
+        self.assertEqual(actual_observation, expected_observation)
         
-        for mock_cell in mocked_observation_cells:
-            self.assertEqual(like_observations(mock_cell), True)
-            
-    # Test that our filter returns False when expected to
-    def test_like_observations_false(self):
+        
+    def test_like_observations_failure(self):
+        tabs = loadxlstabs("tests/OIC.xls") 
+        tab = tabs[2] #Table 1a
 
-        mocked_non_observation_cells = [
-            MockXYCell(value='2014Q2', x=3, y=2),
-            MockXYCell(value="Lo8n", x=3, y=3),
-            MockXYCell(value="mcuh", x=3, y=4),
-            MockXYCell(value="Exports", x=3, y=5),
-            MockXYCell(value='abcd', x=3, y=6),
-            MockXYCell(value='ABCD', x=3, y=7),
-            MockXYCell(value='', x=2, y=6),
-            MockXYCell(value='2019Feb', x=2, y=7),
-            MockXYCell(value='1a.', x=2, y=8),
-            MockXYCell(value=None, x=4, y=1)
-        ]
-
-        for mock_cell in mocked_non_observation_cells:
-            self.assertEqual(like_observations(mock_cell), False)
-     
+        actual_observation = like_observations(tab)
+        expected_observation = tab.excel_ref("A11").expand(DOWN).is_not_blank() | tab.excel_ref('C11').expand(DOWN).expand(RIGHT).is_not_blank() # year dimension added to observations
+        self.assertIsNot(actual_observation, expected_observation)
+        
+    def test_like_observations_exception(self):
+        tabs = loadxlstabs("tests/OIC.xls") 
+        tab = tabs[1] # Contents
+        
+        with self.assertRaises(TypeError) as exception_context:
+            like_observations(tab)
+        self.assertEqual(
+            str(exception_context.exception),
+            "Observation data from source data must be of type <float> or <int>"
+        )
+    
+        
 if __name__ == '__main__':
     unittest.main()

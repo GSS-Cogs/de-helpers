@@ -1,7 +1,7 @@
 import unittest
 
 from tests.helpers import MockXYCell
-from dehelpers.filters import like_float
+from dehelpers.filters import is_numeric
 
 class TestFloatFunction(unittest.TestCase):
     
@@ -29,7 +29,7 @@ class TestFloatFunction(unittest.TestCase):
         ]
         
         for mock_cell in mocked_float_cells:
-            self.assertEqual(like_float(mock_cell), True)
+            self.assertEqual(is_numeric(mock_cell), True)
             
     # Test that filter returns False when expected to
     def test_like_float_false(self):
@@ -48,7 +48,7 @@ class TestFloatFunction(unittest.TestCase):
         ]
 
         for mock_cell in mocked_non_float_cells:
-            self.assertEqual(like_float(mock_cell), False)
+            self.assertEqual(is_numeric(mock_cell), False)
             
      
 if __name__ == '__main__':

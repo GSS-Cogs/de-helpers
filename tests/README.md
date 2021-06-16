@@ -17,23 +17,20 @@ When you push to a branch the same tests will be ran via a github action (just c
 
 To create unit tests you create a `test_<name of module being tests>.py` in the corresponding directory of the test root (hard to explain in text - see below).
 
-So for example, if you wanted to add some new filters as follows:
+So for example, if you wanted to add some new filters in `filters.py`, you'd setup your file structure as follows:
 
 ```
 /dehelpers
-    /filters
-       /my_amazing_filters.py
+    /filters.py
 ```
 
 Then when you added the tests, you'd have a structure of
 
 ```
 /dehelpers
-    /filters
-       /my_amazing_filters.py
+    /filters.py
 /tests
-    /filters
-        /test_my_amazing_filters.py
+    /test_filters.py
 ```
 
 This is enough that your new tests will get automatically discovered and ran either locally or on github.
